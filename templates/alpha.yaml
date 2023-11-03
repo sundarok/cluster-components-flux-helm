@@ -12,7 +12,7 @@ metadata:
     gwcp.guidewire.com/maintained-by: pod-avondale
     gwcp.guidewire.com/dept: {{ .Values.departmentCode | quote }}
 spec:
-  interval: 10m0s
+  interval: 1m
   url: https://stefanprodan.github.io/podinfo
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
@@ -36,7 +36,7 @@ spec:
         kind: HelmRepository
         name: alpha
       version: '6.5.1'
-  interval: 10m0s
+  interval: 1m
   values: {{ toYaml .Values.alpha.values | nindent 4 }}
   postRenderers:
     - kustomize:
