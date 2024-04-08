@@ -27,3 +27,8 @@ keda:
       operator:
         limits:
           cpu: 100m
+        requests:
+          cpu: 1m
+          memory: 30Mi
+    operator:
+      replicaCount: 1
